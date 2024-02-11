@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block formulario %} 
+
+<p> Buscar estudios por nivel educativo </p>
+<form action = '/buscar/' method='GET'>
+    <input type = 'text' name = 'nivel' id = 'nivel'>
+    <input type = 'submit' value = 'buscar'>
+</form>
+
+{% if estudios %}
+<ul>
+    {% for estudio in estudios %}
+    <li>Establecimiento: {{estudio.establecimiento}} | Estado: {{estudio.estado}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}

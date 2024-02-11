@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block formulario %} 
+
+{% if mi_formulario.errors %}
+<p style='color: red'>Estan mal los datos, revisar </p>
+{% endif %}
+
+<form action = '/laboral/' method='post'>
+    {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
+    <input type = 'submit' value = 'Enviar'>
+</form>
+
+{% endblock %}
